@@ -30,11 +30,11 @@ const CreateNewGraph = () => {
   };
 
   return (
-    <div className="uppercase flex flex-col gap-6">
-      <h2>Create New Graph</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="uppercase flex flex-col gap-16">
+      <h2 className="text-3xl font-semibold">Create New Graph</h2>
+      <form className="min-w-min" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-10 text-left items-left">
-          <div className="flex justify-between">
+          <div className="flex justify-between md:flex-row flex-col">
             <label>Graph Title:</label>
             <input
               type="text"
@@ -45,7 +45,7 @@ const CreateNewGraph = () => {
             />
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between md:flex-row flex-col">
             <label>Description:</label>
             <textarea
               name="description"
@@ -55,12 +55,12 @@ const CreateNewGraph = () => {
             />
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between md:flex-row flex-col">
             <label>Select Papers:</label>
             <input type="file" multiple onChange={handlePaperSelection} />
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between md:flex-row flex-col">
             <label>Layout:</label>
             <select
               name="layout"
@@ -73,7 +73,7 @@ const CreateNewGraph = () => {
             </select>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between md:flex-row flex-col">
             <label>Colors:</label>
             <select
               name="colors"
@@ -86,7 +86,7 @@ const CreateNewGraph = () => {
             </select>
           </div>
 
-          <button className="hover:bg-slate-800">Create Graph</button>
+          <button className="md:w-full hover:bg-slate-800">Create Graph</button>
         </div>
       </form>
     </div>
