@@ -62,7 +62,7 @@ const PricingPage = () => {
         ))}
       </div>
 
-      <div className="selected-plan-details">
+      <div className="selected-plan-details bg-black border rounded-lg text-yellow-100">
         <h3>Selected Plan: {selectedPlan.name}</h3>
         <p>{selectedPlan.cost}</p>
         <p>{selectedPlan.graphsLimit}</p>
