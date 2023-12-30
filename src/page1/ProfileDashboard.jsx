@@ -37,8 +37,6 @@ const ProfileDashboard = () => {
     ],
   });
   return (
-    // my profile dashboard
-
     <div className="uppercase flex flex-col gap-6 text-left">
       <section className="flex flex-col items-center gap-2">
         <h2 className="text-slate-200 text-2xl">User Profile</h2>
@@ -52,7 +50,13 @@ const ProfileDashboard = () => {
         <p>Bio: {user.bio}</p>
       </section>
 
-      <div className="flex flex-col gap-16">
+      <div>
+        <Link to={`/account`}>
+          <button className="w-full">See profile Details</button>
+        </Link>
+      </div>
+
+      <div className="flex flex-col w-full gap-16">
         {/* Account Details */}
         <section>
           <h2 className="text-3xl underline">Account Details</h2>
@@ -124,12 +128,12 @@ const ProfileDashboard = () => {
 
         {/* Link to Favorites and Collections pages */}
         <section className="flex flex-col text-center gap-3">
-          <Link to={"/favourites"}>
+          <Link to={"/pricing"}>
             <button className="bg-slate-700 text-white hover:bg-slate-900 w-full">
               Favourites
             </button>
           </Link>
-          <Link to={"/favourites"}>
+          <Link to={"/getgraphdetails"}>
             <button className="bg-slate-700 text-white hover:bg-slate-900 w-full">
               Collections
             </button>

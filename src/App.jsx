@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/profile" element={<ProfileDashboard />} />
+        <Route path="/" element={<ProfileDashboard />} />
         <Route path="/createnewgraph" element={<CreateNewGraph />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/account" element={<AccountSettings />} />

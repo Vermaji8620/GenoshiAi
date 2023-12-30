@@ -36,13 +36,13 @@ const PricingPage = () => {
   };
 
   return (
-    <div className="pricing-page-container flex flex-col gap-10">
+    <div className="flex flex-col gap-10">
       <h2 className="text-4xl">Pricing Plans</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {pricingPlans.map((plan) => (
           <div
             key={plan.id}
-            className={`pricing-plan-card ${
+            className={`${
               selectedPlan.id === plan.id ? "selected" : ""
             } bg-slate-600 p-3 rounded-lg uppercase`}
             onClick={() => handlePlanSelect(plan)}
@@ -62,7 +62,7 @@ const PricingPage = () => {
         ))}
       </div>
 
-      <div className="selected-plan-details bg-black border rounded-lg text-yellow-100">
+      <div className="bg-black border rounded-lg text-yellow-100">
         <h3>Selected Plan: {selectedPlan.name}</h3>
         <p>{selectedPlan.cost}</p>
         <p>{selectedPlan.graphsLimit}</p>
