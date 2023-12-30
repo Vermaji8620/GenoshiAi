@@ -93,7 +93,14 @@ const ProfileDashboard = () => {
               Create New Graph(Click to navigate)
             </button>
           </Link>
-          <button className="w-full">Share Graphs</button>
+          <button
+            className="w-full"
+            onClick={() => {
+              setUser();
+            }}
+          >
+            Share Graphs
+          </button>
           <button className="w-full">Upload Papers</button>
         </section>
 
@@ -118,12 +125,12 @@ const ProfileDashboard = () => {
         {/* Link to Favorites and Collections pages */}
         <section className="flex flex-col text-center gap-3">
           <Link to={"/favourites"}>
-            <button className="bg-slate-700 hover:bg-slate-900 w-full">
+            <button className="bg-slate-700 text-white hover:bg-slate-900 w-full">
               Favourites
             </button>
           </Link>
           <Link to={"/favourites"}>
-            <button className="bg-slate-700 hover:bg-slate-900 w-full">
+            <button className="bg-slate-700 text-white hover:bg-slate-900 w-full">
               Collections
             </button>
           </Link>

@@ -1,8 +1,8 @@
-import AccountSettings from "./pages/AccountSettings";
+import AccountSettings from "./page1/AccountSettings";
 import "./App.css";
-import CreateNewGraph from "./pages/CreateNewGraph";
-import GraphDetails from "./pages/GraphDetails";
-import ProfileDashboard from "./pages/ProfileDashboard";
+import CreateNewGraph from "./page1/CreateNewGraph";
+import GraphDetails from "./page1/GraphDetails";
+import ProfileDashboard from "./page1/ProfileDashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
