@@ -1,5 +1,5 @@
-import "./App.css";
 import AccountSettings from "./pages/AccountSettings";
+import "./App.css";
 import CreateNewGraph from "./pages/CreateNewGraph";
 import GraphDetails from "./pages/GraphDetails";
 import ProfileDashboard from "./pages/ProfileDashboard";
