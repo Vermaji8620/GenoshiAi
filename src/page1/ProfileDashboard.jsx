@@ -41,11 +41,11 @@ const ProfileDashboard = () => {
   });
   return (
     <div className="uppercase flex flex-col gap-6 text-left">
-      <section className="flex flex-col items-center gap-2">
-        <h2 className="text-slate-200 text-2xl">User Profile</h2>
+      <section className="flex flex-col items-center gap-4">
+        <h2 className="text-slate-200 text-4xl">User Profile</h2>
         <img
           src={user.profilePhoto}
-          className="sm:h-[200px] sm:w-[200px]"
+          className="sm:h-[200px] sm:w-[200px] rounded-full"
           alt="Profile"
         />
         <p>Name: {user.name}</p>
@@ -56,27 +56,29 @@ const ProfileDashboard = () => {
       <div>
         <Link to={`/account`}>
           {/* link is used to navigate to the desrired page */}
-          <button className="w-full hover:text-white">See profile Details</button>
+          <button className="w-full hover:text-white">
+            See profile Details
+          </button>
         </Link>
       </div>
 
-      <div className="flex flex-col w-full gap-16">
-        <section>
-          <h2 className="text-3xl underline">Account Details</h2>
+      <div className="flex flex-col w-full  gap-16">
+        <section className="flex  flex-col hover:bg-slate-800  rounded-lg p-6 items-center gap-1">
+          <h2 className="text-3xl  underline">Account Details</h2>
           <p>Subscription Plan: {user.subscription.plan}</p>
           <p>Status: {user.subscription.status}</p>
         </section>
 
-        <section>
-          <h2 className="text-4xl underline">Usage Metrics</h2>
+        <section className="flex flex-col hover:bg-slate-800 rounded-lg p-6 items-center gap-1">
+          <h2 className="text-4xl text-center underline">Usage Metrics</h2>
           <p>Graphs Created: {user.usageMetrics.graphsCreated}</p>
           <p>Graphs Shared: {user.usageMetrics.graphsShared}</p>
           <p>Papers Collected: {user.usageMetrics.papersCollected}</p>
         </section>
 
-        <section>
-          <h2 className="text-4xl underline">Recent Activity</h2>
-          <ul>
+        <section className="flex flex-col hover:bg-slate-800 rounded-lg p-6 gap-3 text-center">
+          <h2 className="text-4xl text-center underline">Recent Activity</h2>
+          <ul className="flex flex-col gap-3">
             {user.recentActivity.map((activity, index) => (
               <li key={index}>
                 {activity.type === "graph" && (
@@ -92,12 +94,10 @@ const ProfileDashboard = () => {
 
         <section className="flex flex-col gap-3">
           <Link to={`/createnewgraph`}>
-            <button className="w-full">
-              Create New Graph(Click to navigate)
-            </button>
+            <button className="w-full">Create New Graph</button>
           </Link>
           <button
-            className="w-full"
+            className="w-full hover:text-yellow-300 hover:bg-slate-800 transition-all 0.5s ease-in-out"
             onClick={() => {
               setUser();
             }}
@@ -116,7 +116,7 @@ const ProfileDashboard = () => {
                 <p>Date Created: {graph.dateCreated}</p>
                 <img
                   src={graph.thumbnail}
-                  className="w-[500px] "
+                  className="w-[500px] rounded-full"
                   alt={`Thumbnail for ${graph.title}`}
                 />
               </li>
