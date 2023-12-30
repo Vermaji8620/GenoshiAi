@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// here we are using a local array of objects to store the pricing plans ..this is an array of objects
 const pricingPlans = [
   {
     id: 1,
@@ -29,6 +30,7 @@ const pricingPlans = [
 ];
 
 const PricingPage = () => {
+  // here we are using the useState hook to store the selected plan
   const [selectedPlan, setSelectedPlan] = useState(pricingPlans[0]);
 
   const handlePlanSelect = (plan) => {
@@ -62,6 +64,7 @@ const PricingPage = () => {
         ))}
       </div>
 
+      {/* here we are listing the selected plan */}
       <div className="bg-black border rounded-lg text-yellow-100">
         <h3>Selected Plan: {selectedPlan.name}</h3>
         <p>{selectedPlan.cost}</p>
@@ -79,4 +82,5 @@ const PricingPage = () => {
   );
 };
 
+// export the PricingPage component
 export default PricingPage;

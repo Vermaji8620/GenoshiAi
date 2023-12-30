@@ -32,6 +32,7 @@ const CreateNewGraph = () => {
   return (
     <div className="uppercase flex flex-col gap-16">
       <h2 className="text-3xl font-semibold">Create New Graph</h2>
+      {/* Form to specify graph title and description */}
       <form className="min-w-min" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-10 text-left items-left">
           <div className="flex justify-between md:flex-row flex-col">
@@ -59,6 +60,7 @@ const CreateNewGraph = () => {
 
           <div className="flex justify-between md:flex-row flex-col">
             <label>Select Papers:</label>
+            {/* Upload papers or select from favourites/collections */}
             <input type="file" multiple onChange={handlePaperSelection} />
           </div>
 
@@ -69,6 +71,7 @@ const CreateNewGraph = () => {
               value={graphData.layout}
               onChange={handleInputChange}
             >
+              {/* Configure graph settings - layout, colors, etc */}
               <option value="default">Default</option>
               <option value="gradient">gradient</option>
               <option value="landscape">landscape</option>
@@ -97,5 +100,7 @@ const CreateNewGraph = () => {
     </div>
   );
 };
+
+// exporting the CreateNewGraph component
 
 export default CreateNewGraph;

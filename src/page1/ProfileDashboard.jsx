@@ -1,7 +1,10 @@
 import { useState } from "react";
+// importing the useState hook from react
+// importing the Link component from react-router-dom
 import { Link } from "react-router-dom";
 
 const ProfileDashboard = () => {
+  // here we are using the useState hook to store the user data
   const [user, setUser] = useState({
     name: "Aditya Raj Verma",
     email: "vadityaraj67@gmail.com",
@@ -52,19 +55,18 @@ const ProfileDashboard = () => {
 
       <div>
         <Link to={`/account`}>
+          {/* link is used to navigate to the desrired page */}
           <button className="w-full">See profile Details</button>
         </Link>
       </div>
 
       <div className="flex flex-col w-full gap-16">
-        {/* Account Details */}
         <section>
           <h2 className="text-3xl underline">Account Details</h2>
           <p>Subscription Plan: {user.subscription.plan}</p>
           <p>Status: {user.subscription.status}</p>
         </section>
 
-        {/* Usage Metrics */}
         <section>
           <h2 className="text-4xl underline">Usage Metrics</h2>
           <p>Graphs Created: {user.usageMetrics.graphsCreated}</p>
@@ -72,12 +74,10 @@ const ProfileDashboard = () => {
           <p>Papers Collected: {user.usageMetrics.papersCollected}</p>
         </section>
 
-        {/* Recent Activity Feed */}
         <section>
           <h2 className="text-4xl underline">Recent Activity</h2>
           <ul>
             {user.recentActivity.map((activity, index) => (
-              // mapping the activity array
               <li key={index}>
                 {activity.type === "graph" && (
                   <p>{`Created graph "${activity.name}" on ${activity.date}`}</p>
@@ -90,7 +90,6 @@ const ProfileDashboard = () => {
           </ul>
         </section>
 
-        {/* Actions as specified */}
         <section className="flex flex-col gap-3">
           <Link to={`/createnewgraph`}>
             <button className="w-full">
@@ -108,7 +107,6 @@ const ProfileDashboard = () => {
           <button className="w-full">Upload Papers</button>
         </section>
 
-        {/* List of Saved Graphs */}
         <section className="flex flex-col gap-6">
           <h2 className="text-4xl underline">Saved Graphs</h2>
           <ul className="flex flex-col gap-16">
@@ -126,13 +124,14 @@ const ProfileDashboard = () => {
           </ul>
         </section>
 
-        {/* Link to Favorites and Collections pages */}
         <section className="flex flex-col text-center gap-3">
+          {/* the fourites button is linked to the /pricing page */}
           <Link to={"/pricing"}>
             <button className="bg-slate-700 text-white hover:bg-slate-900 w-full">
               Favourites
             </button>
           </Link>
+          {/* the collections button is linked to the /getgraphdetails page */}
           <Link to={"/getgraphdetails"}>
             <button className="bg-slate-700 text-white hover:bg-slate-900 w-full">
               Collections
@@ -144,4 +143,5 @@ const ProfileDashboard = () => {
   );
 };
 
+// exporting the compoennt
 export default ProfileDashboard;

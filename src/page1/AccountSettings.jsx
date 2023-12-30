@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const AccountSettings = () => {
+  // here we are using the useState hook to store the form data
   const [formData, setFormData] = useState({
     name: "Aditya Raj Verma",
     email: "vadityaraj67@gmail.com",
@@ -9,6 +10,7 @@ const AccountSettings = () => {
     confirmPassword: "",
   });
 
+  // here this is a handler function that will be called ..
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -84,7 +86,7 @@ const AccountSettings = () => {
             onChange={handleInputChange}
           />
         </div>
-
+        {/* linking all the buttons */}
         <button>Link Google Account</button>
 
         <div>
@@ -97,4 +99,5 @@ const AccountSettings = () => {
   );
 };
 
+// exporting the component
 export default AccountSettings;

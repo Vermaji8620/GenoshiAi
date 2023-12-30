@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const GraphDetails = () => {
   const [graph, setGraph] = useState({
+    // Show graph title, description, date created
     title: "Graph title",
     description: "This is graph description presented here",
     dateCreated: "2023-01-01",
@@ -28,6 +29,7 @@ const GraphDetails = () => {
         <p>
           <strong>Papers:</strong>
         </p>
+        {/* mapping individually */}
         <ul className="flex flex-col gap-3">
           {graph.papers.map((paper, index) => (
             <li key={index}>{paper}</li>
@@ -38,6 +40,7 @@ const GraphDetails = () => {
       <div className="flex flex-col gap-4">
         <button>Edit Graph</button>
         <button>Share Graph</button>
+
         <button
           onClick={() => {
             setGraph();
@@ -50,5 +53,7 @@ const GraphDetails = () => {
     </div>
   );
 };
+
+// export the component
 
 export default GraphDetails;
