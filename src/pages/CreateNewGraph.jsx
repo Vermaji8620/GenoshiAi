@@ -41,6 +41,7 @@ const CreateNewGraph = () => {
               name="title"
               value={graphData.title}
               onChange={handleInputChange}
+              placeholder="Enter Graph Title"
               required
             />
           </div>
@@ -50,6 +51,7 @@ const CreateNewGraph = () => {
             <textarea
               name="description"
               value={graphData.description}
+              placeholder="Enter Description"
               onChange={handleInputChange}
               required
             />
@@ -85,6 +87,9 @@ const CreateNewGraph = () => {
               <option value="highlighted">highlighted</option>
             </select>
           </div>
+
+          {/* View graph visualization preview */}
+          {/* i did not understand whats the meaning of this, so did not implement this */}
 
           <button className="md:w-full hover:bg-slate-800">Create Graph</button>
         </div>
