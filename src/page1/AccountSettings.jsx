@@ -22,12 +22,12 @@ const AccountSettings = () => {
   };
 
   return (
-    <div className="account-settings-container flex flex-col gap-10">
+    <div className="flex flex-col gap-10">
       <h2 className="md:text-4xl text-3xl underline underline-offset-4">
         Account Settings
       </h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-        <div className=" justify-between flex p-2 flex-col">
+        <div className="justify-between flex p-2 flex-col">
           <label className="text-left">Full Name:</label>
           <input
             type="text"
@@ -87,7 +87,7 @@ const AccountSettings = () => {
 
         <button>Link Google Account</button>
 
-        <div className="usage-statistics">
+        <div>
           <p>Usage Statistics:</p>
         </div>
 

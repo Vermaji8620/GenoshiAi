@@ -9,26 +9,22 @@ const GraphDetails = () => {
   });
 
   return (
-    <div className="graph-details-container flex flex-col uppercase gap-6">
+    <div className=" flex flex-col uppercase gap-6">
       <div>
-        <h2 className="graph-details-title md:text-5xl text-4xl font-semibold">
-          {graph.title}
-        </h2>
+        <h2 className="md:text-5xl text-4xl font-semibold">{graph.title}</h2>
       </div>
 
       <div>
-        <p className="graph-details-description md:text-3xl">
-          {graph.description}
-        </p>
+        <p className="md:text-3xl">{graph.description}</p>
       </div>
 
-      <div className="graph-details-info">
+      <div>
         <p>
           <strong>Date Created:</strong> {graph.dateCreated}
         </p>
       </div>
 
-      <div className="graph-details-papers flex md:flex-row gap-4 flex-col justify-between items-center">
+      <div className="flex md:flex-row gap-4 flex-col justify-between items-center">
         <p>
           <strong>Papers:</strong>
         </p>
@@ -39,7 +35,7 @@ const GraphDetails = () => {
         </ul>
       </div>
 
-      <div className="graph-details-actions flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <button>Edit Graph</button>
         <button>Share Graph</button>
         <button
