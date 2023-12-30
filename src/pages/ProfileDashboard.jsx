@@ -88,9 +88,13 @@ const ProfileDashboard = () => {
 
         {/* Actions as specified */}
         <section className="flex flex-col gap-3">
-          <button className="bg-slate-900">Create New Graph</button>
-          <button>Share Graphs</button>
-          <button>Upload Papers</button>
+          <Link to={`/createnewgraph`}>
+            <button className="w-full">
+              Create New Graph(Click to navigate)
+            </button>
+          </Link>
+          <button className="w-full">Share Graphs</button>
+          <button className="w-full">Upload Papers</button>
         </section>
 
         {/* List of Saved Graphs */}
