@@ -42,7 +42,14 @@ const GraphDetails = () => {
       <div className="graph-details-actions flex flex-col gap-4">
         <button>Edit Graph</button>
         <button>Share Graph</button>
-        <button>Delete Graph</button>
+        <button
+          onClick={() => {
+            setGraph();
+          }}
+          disabled
+        >
+          Delete Graph
+        </button>
       </div>
     </div>
   );
