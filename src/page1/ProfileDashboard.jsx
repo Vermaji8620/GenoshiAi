@@ -56,7 +56,7 @@ const ProfileDashboard = () => {
       <div>
         <Link to={`/account`}>
           {/* link is used to navigate to the desrired page */}
-          <button className="w-full">See profile Details</button>
+          <button className="w-full hover:text-white">See profile Details</button>
         </Link>
       </div>
 

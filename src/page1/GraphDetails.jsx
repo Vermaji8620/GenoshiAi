@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const GraphDetails = () => {
   const [graph, setGraph] = useState({
@@ -12,11 +13,15 @@ const GraphDetails = () => {
   return (
     <div className=" flex flex-col uppercase gap-6">
       <div>
-        <h2 className="md:text-5xl text-4xl font-semibold">{graph.title}</h2>
+        <h2 className="md:text-5xl text-4xl font-semibold hover:text-fuchsia-400 transform transition-all 0.5s ease-in hover:scale-150">
+          {graph.title}
+        </h2>
       </div>
 
       <div>
-        <p className="md:text-3xl">{graph.description}</p>
+        <p className="hover:underline underline-offset-8 md:text-3xl">
+          {graph.description}
+        </p>
       </div>
 
       <div>
@@ -38,8 +43,12 @@ const GraphDetails = () => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <button>Edit Graph</button>
-        <button>Share Graph</button>
+        <button className="transform hover:scale-110 hover:border-blue-600">
+          Edit Graph
+        </button>
+        <Link to={"/"}>
+          <button className="w-full">Share Graph</button>
+        </Link>
 
         <button
           onClick={() => {

@@ -30,8 +30,8 @@ const CreateNewGraph = () => {
   };
 
   return (
-    <div className="uppercase flex flex-col gap-16">
-      <h2 className="text-3xl font-semibold">Create New Graph</h2>
+    <div className="uppercase flex flex-col gap-16 bg-zinc-900 p-4 rounded-lg">
+      <h2 className="text-4xl  font-bold hover:underline">Create New Graph</h2>
       {/* Form to specify graph title and description */}
       <form className="min-w-min" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-10 text-left items-left">
@@ -39,6 +39,7 @@ const CreateNewGraph = () => {
             <label>Graph Title:</label>
             <input
               type="text"
+              className="p-2 rounded-md"
               name="title"
               value={graphData.title}
               onChange={handleInputChange}
@@ -53,12 +54,13 @@ const CreateNewGraph = () => {
               name="description"
               value={graphData.description}
               placeholder="Enter Description"
+              className="p-2 rounded-lg"
               onChange={handleInputChange}
               required
             />
           </div>
 
-          <div className="flex justify-between md:flex-row flex-col">
+          <div className="flex justify-between items-center md:flex-row flex-col">
             <label>Select Papers:</label>
             {/* Upload papers or select from favourites/collections */}
             <input type="file" multiple onChange={handlePaperSelection} />
@@ -70,6 +72,7 @@ const CreateNewGraph = () => {
               name="layout"
               value={graphData.layout}
               onChange={handleInputChange}
+              className="p-2 rounded-md"
             >
               {/* Configure graph settings - layout, colors, etc */}
               <option value="default">Default</option>
@@ -83,6 +86,7 @@ const CreateNewGraph = () => {
             <select
               name="colors"
               value={graphData.colors}
+              className="p-2 rounded-md"
               onChange={handleInputChange}
             >
               <option value="default">Default</option>

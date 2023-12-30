@@ -39,14 +39,16 @@ const PricingPage = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <h2 className="text-4xl">Pricing Plans</h2>
+      <h2 className="text-4xl underline underline-offset-4 uppercase hover:text-yellow-400 cursor-pointer">
+        Pricing Plans
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {pricingPlans.map((plan) => (
           <div
             key={plan.id}
             className={`${
               selectedPlan.id === plan.id ? "selected" : ""
-            } bg-slate-600 p-3 rounded-lg uppercase`}
+            } bg-slate-600 p-3 rounded-lg uppercase hover:bg-slate-800 hover:scale-80 cursor-pointer transition-all duration-500 hover:text-yellow-400 hover:rotate-45 ease-in-out`}
             onClick={() => handlePlanSelect(plan)}
           >
             <h3>{plan.name}</h3>

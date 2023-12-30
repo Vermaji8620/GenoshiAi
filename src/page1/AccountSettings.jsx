@@ -29,35 +29,37 @@ const AccountSettings = () => {
         Account Settings
       </h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-        <div className="justify-between flex p-2 flex-col">
-          <label className="text-left">Full Name:</label>
-          <input
-            type="text"
-            className="p-2 rounded-md sm:w-full"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+        <div className="md:flex">
+          <div className="justify-between flex p-2 flex-col">
+            <label className="text-left">Full Name:</label>
+            <input
+              type="text"
+              className="p-2 hover:bg-transparent hover:transition-all 5s ease-linear rounded-md sm:w-full"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
 
-        <div className=" justify-between flex p-2 flex-col">
-          <label className="text-left">Email:</label>
-          <input
-            type="email"
-            className="p-2 rounded-md"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
+          <div className=" justify-between flex p-2 flex-col">
+            <label className="text-left">Email:</label>
+            <input
+              type="email"
+              className="p-2  hover:bg-transparent hover:transition-all 5s ease-linear rounded-md"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
         </div>
 
         <div className=" justify-between flex p-2 flex-col">
           <label className="text-left">Current Password:</label>
           <input
             type="password"
-            className="p-2 rounded-md"
+            className="p-2  hover:bg-transparent hover:transition-all 5s ease-linear rounded-md"
             name="currentPassword"
             value={formData.currentPassword}
             onChange={handleInputChange}
@@ -69,7 +71,7 @@ const AccountSettings = () => {
           <label className="text-left">New Password:</label>
           <input
             type="password"
-            className="p-2 rounded-md"
+            className="p-2  hover:bg-transparent hover:transition-all 5s ease-linear rounded-md"
             name="newPassword"
             value={formData.newPassword}
             onChange={handleInputChange}
@@ -80,20 +82,15 @@ const AccountSettings = () => {
           <label className="text-left">Confirm Password</label>
           <input
             type="password"
-            className="p-2 rounded-md"
+            className="p-2  hover:bg-transparent hover:transition-all 5s ease-linear rounded-md"
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleInputChange}
           />
         </div>
         {/* linking all the buttons */}
-        <button>Link Google Account</button>
-
-        <div>
-          <p>Usage Statistics:</p>
-        </div>
-
-        <button>Save All</button>
+        <button className="hover:text-yellow-500">Link Google Account</button>
+        <button className="hover:text-yellow-500">Save All</button>
       </form>
     </div>
   );
