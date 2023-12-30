@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const ProfileDashboard = () => {
-  const user = {
+  const [user, setUser] = useState({
     name: "Aditya Raj Verma",
     email: "vadityaraj67@gmail.com",
     profilePhoto:
@@ -32,14 +35,13 @@ const ProfileDashboard = () => {
           "https://png.pngtree.com/element_our/sm/20180518/sm_5afec55eb036b.png",
       },
     ],
-  };
-
+  });
   return (
     // my profile dashboard
 
     <div className="uppercase flex flex-col gap-6 text-left">
       <section className="flex flex-col items-center gap-2">
-        <h2>User Profile</h2>
+        <h2 className="text-slate-200 text-2xl">User Profile</h2>
         <img
           src={user.profilePhoto}
           className="sm:h-[200px] sm:w-[200px]"
@@ -50,66 +52,79 @@ const ProfileDashboard = () => {
         <p>Bio: {user.bio}</p>
       </section>
 
-      {/* Account Details */}
-      <section>
-        <h2>Account Details</h2>
-        <p>Subscription Plan: {user.subscription.plan}</p>
-        <p>Status: {user.subscription.status}</p>
-      </section>
+      <div className="flex flex-col gap-16">
+        {/* Account Details */}
+        <section>
+          <h2 className="text-3xl underline">Account Details</h2>
+          <p>Subscription Plan: {user.subscription.plan}</p>
+          <p>Status: {user.subscription.status}</p>
+        </section>
 
-      {/* Usage Metrics */}
-      <section>
-        <h2>Usage Metrics</h2>
-        <p>Graphs Created: {user.usageMetrics.graphsCreated}</p>
-        <p>Graphs Shared: {user.usageMetrics.graphsShared}</p>
-        <p>Papers Collected: {user.usageMetrics.papersCollected}</p>
-      </section>
+        {/* Usage Metrics */}
+        <section>
+          <h2 className="text-4xl underline">Usage Metrics</h2>
+          <p>Graphs Created: {user.usageMetrics.graphsCreated}</p>
+          <p>Graphs Shared: {user.usageMetrics.graphsShared}</p>
+          <p>Papers Collected: {user.usageMetrics.papersCollected}</p>
+        </section>
 
-      {/* Recent Activity Feed */}
-      <section>
-        <h2>Recent Activity</h2>
-        <ul>
-          {user.recentActivity.map((activity, index) => (
-            // mapping the activity array
-            <li key={index}>
-              {activity.type === "graph" && (
-                <p>{`Created graph "${activity.name}" on ${activity.date}`}</p>
-              )}
-              {activity.type === "collection" && (
-                <p>{`Created collection "${activity.name}" on ${activity.date}`}</p>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
+        {/* Recent Activity Feed */}
+        <section>
+          <h2 className="text-4xl underline">Recent Activity</h2>
+          <ul>
+            {user.recentActivity.map((activity, index) => (
+              // mapping the activity array
+              <li key={index}>
+                {activity.type === "graph" && (
+                  <p>{`Created graph "${activity.name}" on ${activity.date}`}</p>
+                )}
+                {activity.type === "collection" && (
+                  <p>{`Created collection "${activity.name}" on ${activity.date}`}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Actions as specified */}
-      <section className="flex flex-col gap-3">
-        <button>Create New Graph</button>
-        <button>Share Graphs</button>
-        <button>Upload Papers</button>
-      </section>
+        {/* Actions as specified */}
+        <section className="flex flex-col gap-3">
+          <button className="bg-slate-900">Create New Graph</button>
+          <button>Share Graphs</button>
+          <button>Upload Papers</button>
+        </section>
 
-      {/* List of Saved Graphs */}
-      <section>
-        <h2>Saved Graphs</h2>
-        <ul>
-          {user.savedGraphs.map((graph, index) => (
-            <li key={index}>
-              <p>Title: {graph.title}</p>
-              <p>Date Created: {graph.dateCreated}</p>
-              <img src={graph.thumbnail} alt={`Thumbnail for ${graph.title}`} />
-            </li>
-          ))}
-        </ul>
-      </section>
+        {/* List of Saved Graphs */}
+        <section className="flex flex-col gap-6">
+          <h2 className="text-4xl underline">Saved Graphs</h2>
+          <ul className="flex flex-col gap-16">
+            {user.savedGraphs.map((graph, index) => (
+              <li key={index} className="text-blue-400">
+                <p>Title: {graph.title}</p>
+                <p>Date Created: {graph.dateCreated}</p>
+                <img
+                  src={graph.thumbnail}
+                  className="w-[500px] "
+                  alt={`Thumbnail for ${graph.title}`}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Link to Favorites and Collections pages */}
-      <section>
-        <h2>Links</h2>
-        <a href="/favorites">Favorites</a>
-        <a href="/collections">Collections</a>
-      </section>
+        {/* Link to Favorites and Collections pages */}
+        <section className="flex flex-col text-center gap-3">
+          <Link to={"/favourites"}>
+            <button className="bg-slate-700 hover:bg-slate-900 w-full">
+              Favourites
+            </button>
+          </Link>
+          <Link to={"/favourites"}>
+            <button className="bg-slate-700 hover:bg-slate-900 w-full">
+              Collections
+            </button>
+          </Link>
+        </section>
+      </div>
     </div>
   );
 };
